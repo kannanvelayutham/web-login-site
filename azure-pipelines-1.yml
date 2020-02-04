@@ -27,3 +27,8 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
           $(tag)
+    - task: AzureKeyVault@1
+      inputs:
+        azureSubscription: 'Free Trial(a82dcdb5-a12a-4daf-8b4d-3ace80d38c37)'
+        KeyVaultName: 'skokey'
+        SecretsFilter: '*'
